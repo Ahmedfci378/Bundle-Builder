@@ -1,0 +1,351 @@
+// ProductCard.scss — camera product card, vertical layout
+// Scoped entirely under .product-card / .variant-swatch* so no other
+// surface (Review Panel, ReviewItem, CheckoutSummary) is affected.
+
+.product-card {
+  background-color: #7ba5ea;
+  border: 1px solid #e5e7eb;
+  border-radius: 1rem;
+  box-shadow: 0 1px 3px rgba(16, 24, 40, 0.06);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
+  overflow: hidden;
+
+  &:hover {
+    box-shadow: 0 10px 24px rgba(16, 24, 40, 0.1);
+    transform: translateY(-2px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+.cameras-sectionn{
+    background:#EDF4FF;
+    border-radius:24px;
+    padding:32px;
+}
+
+.product-card--selected {
+  border-color: var(--bs-primary);
+  border-width: 2px;
+}
+
+.product-card__badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 1;
+
+  .badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.35em 0.7em;
+  }
+}
+
+// "~60% of card height" is approximated with a fixed image area calibrated
+// against the body block below (title + 2-line description + variants +
+// footer row), since a literal live percentage of a fluid, content-driven
+// card height isn't meaningfully expressible in pure CSS without measuring
+// the rendered card in JS.
+.product-card__image-wrap {
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  background-color: #fff;
+}
+
+.product-card__image{
+    width:110px;
+    height:110px;
+    object-fit:contain;
+}
+
+.product-card__body {
+  padding: 1rem 1.25rem 1.25rem;
+}
+
+.product-card__title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1.3;
+}
+
+.product-card__description {
+  font-size: 0.8125rem;
+  line-height: 1.4;
+  color: #6b7280;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__learn-more {
+  color: var(--bs-primary);
+  text-decoration: underline;
+  white-space: nowrap;
+}
+
+.product-card__footer {
+  padding-top: 0.75rem;
+}
+
+// Circular variant swatches — selection is shown as a ring around the
+// circle (not a fill), so the actual swatch color is never obscured.
+.variant-swatch {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: none;
+  padding: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.variant-swatch--selected {
+  border-color: var(--bs-primary);
+}
+
+.variant-swatch__circle {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+// Quantity stepper — compact square buttons, scoped to camera cards only so
+// the Review Panel's stepper (the same shared component, used elsewhere)
+// keeps its own default appearance.
+.product-card .qty-stepper {
+  border-radius: 0.5rem;
+}
+
+.product-card .qty-stepper-btn {
+  border-radius: 0.375rem;
+  width: 28px;
+  height: 28px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// ---------------------------------------------------------------------------
+// Camera card — horizontal layout (image left, content right), matching the
+// Cameras section reference mockup. Fully scoped under
+// .product-card--camera / .product-card__*--camera / .variant-pill* so no
+// other category's card (which keeps using the rules above) is affected.
+// ---------------------------------------------------------------------------
+
+.product-card--camera {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: stretch;
+
+  width: 100%;
+  max-width: 700px;
+  min-height: 190px;
+
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 16px;
+  box-shadow: 0 1px 4px rgba(16, 24, 40, 0.05);
+
+  overflow: hidden;
+  transition: box-shadow 0.15s ease, transform 0.15s ease, border-color 0.15s ease;
+
+  &:hover {
+    box-shadow: 0 4px 14px rgba(16, 24, 40, 0.08);
+    transform: translateY(-1px);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
+
+    &:hover {
+      transform: none;
+    }
+  }
+}
+
+// Selected camera card — this extra .product-card--camera class gives the
+// rule higher specificity than the shared .product-card--selected rule
+// above, which is left untouched and still governs every other category.
+.product-card--camera.product-card--selected {
+  border: 2px solid #6757ff;
+}
+
+.product-card--camera .product-card__media {
+  flex: 0 0 34%;
+  max-width: 34%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-card__image-wrap--camera {
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 18px;
+}
+
+// Camera mockup calls for a smaller, fixed image size, independent of the
+// shared default-layout .product-card__image rule above.
+.product-card--camera .product-card__image {
+  width: 105px;
+  height: 105px;
+  object-fit: contain;
+}
+
+.product-card__body--camera {
+  flex: 1 1 66%;
+  max-width: 66%;
+  min-width: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  padding: 18px 18px 18px 0;
+}
+
+// Shared by both layouts; camera mockup calls for a 22px bold title.
+.product-card--camera .product-card__title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 6px;
+  line-height: 1.25;
+}
+
+.product-card__description--camera {
+font-size: 8px;
+  color: #666;
+  line-height: 1.4;
+  margin-bottom: 8px;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.product-card__footer--camera {
+  margin-top: auto;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 0.5rem;
+}
+
+// Quantity stepper — camera mockup wants a slightly larger, outlined square
+// button than the compact default above; scoped to camera cards only so
+// every other category's stepper keeps the shared look untouched.
+.product-card--camera .qty-stepper-btn {
+  width: 30px;
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+}
+
+.product-card--camera .qty-stepper-btn:hover:not(:disabled) {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+  color: #fff;
+}
+
+@media (max-width: 479.98px) {
+  .product-card--camera {
+    flex-direction: column;
+    min-height: 0;
+  }
+
+  .product-card--camera .product-card__media {
+    flex: 0 0 auto;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .product-card__image-wrap--camera {
+    height: 160px;
+    padding: 1.25rem;
+  }
+
+  .product-card__body--camera {
+    max-width: 100%;
+    padding: 1rem 1.25rem 1.25rem;
+  }
+}
+
+// Labeled variant pills (swatch dot + name) — Cameras section only.
+.variant-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+
+  height: 34px;
+  padding: 8px 12px;
+
+  background-color: #fff;
+  border: 1px solid #d1d5db;
+  border-radius: 0.5rem;
+
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #374151;
+  line-height: 1;
+
+  cursor: pointer;
+  transition: border-color 0.15s ease, background-color 0.15s ease, color 0.15s ease;
+
+  &:hover:not(:disabled) {
+    border-color: var(--bs-primary);
+  }
+
+  &:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+  }
+}
+
+.variant-pill--selected {
+  border-color: #6757ff;
+  color: #6757ff;
+  background-color: rgba(103, 87, 255, 0.06);
+}
+
+.variant-pill__dot {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  flex: none;
+}
+
+.variant-pill__label {
+  white-space: nowrap;
+}

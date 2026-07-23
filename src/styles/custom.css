@@ -1,0 +1,42 @@
+:root {
+  --bs-primary: #4c3cd8;
+  --bs-primary-rgb: 76, 60, 216;
+}
+
+.btn-primary {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-outline-primary {
+  color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.btn-outline-primary:hover {
+  background-color: var(--bs-primary);
+  border-color: var(--bs-primary);
+}
+
+.text-primary {
+  color: var(--bs-primary) !important;
+}
+
+/* Accessibility: WCAG 2.5.5 recommends a minimum 44x44px touch target.
+   Scoped to mobile only, and to this specific control, so desktop's more
+   compact stepper (used inside already-generous product cards) is untouched. */
+@media (max-width: 767.98px) {
+  .qty-stepper-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+}
+
+/* Visible keyboard focus ring, since several controls here (accordion
+   headers, variant pills) are custom buttons rather than native form
+   controls and must not rely on browser default focus styling alone. */
+.btn:focus-visible,
+.qty-stepper-btn:focus-visible {
+  outline: 2px solid var(--bs-primary);
+  outline-offset: 2px;
+}
