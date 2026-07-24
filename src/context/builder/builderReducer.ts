@@ -18,19 +18,32 @@ export function builderReducer(state: BuilderState, action: BuilderAction): Buil
     }
 
     case 'SET_QUANTITY': {
-      const { productId, quantity } = action.payload;
-      if (quantity <= 0) {
-        const next = { ...state.selections };
-        delete next[productId];
-        return { ...state, selections: next };
-      }
-      const existing = state.selections[productId];
-      if (!existing) return state; // no variant chosen yet — nothing to update
-      return {
-        ...state,
-        selections: { ...state.selections, [productId]: { ...existing, quantity } },
-      };
-    }
+  const { productId, quantity } = action.payload;
+
+  if (quantity <= 0) {
+    const next = { ...state.selections };
+    delete next[productId];
+    return { ...state, selections: next };
+  }
+
+  const existing = state.selections[productId];
+
+  return {
+    ...state,
+    selections: {
+      ...state.selections,
+      [productId]: existing
+        ? {
+            ...existing,
+            quantity,
+          }
+        : {
+            productId,
+            quantity,
+          },
+    },
+  };
+}
 
     case 'REMOVE_PRODUCT': {
       const next = { ...state.selections };

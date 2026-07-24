@@ -338,6 +338,13 @@ font-size: 8px;
   background-color: rgba(103, 87, 255, 0.06);
 }
 
+.variant-pill__image {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
 .variant-pill__dot {
   width: 14px;
   height: 14px;

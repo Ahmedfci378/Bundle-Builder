@@ -47,6 +47,7 @@ export function ProductCardContainer({
         ? product.variants.map(variant => ({
             id: variant.id,
             label: variant.name,
+            image: variant.image,
             swatch: variant.swatch,
             disabled: variant.quantity === 0,
           }))

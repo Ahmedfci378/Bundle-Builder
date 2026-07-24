@@ -136,6 +136,7 @@
           "price": 34.98,
           "compareAtPrice": 39.98,
           "quantity": 8,
+          "image": "/images/products/pan-tilt-camera/white.png",
           "swatch": "#f5f5f0"
         },
         {
@@ -148,6 +149,7 @@
           "price": 34.98,
           "compareAtPrice": 39.98,
           "quantity": 5,
+          "image": "/images/products/pan-tilt-camera/black.png",
           "swatch": "#2b2b2b"
         }
       ]
@@ -175,6 +177,7 @@
           "price": 69.98,
           "compareAtPrice": 89.98,
           "quantity": 6,
+          "image": "/images/products/floodlight-camera/white.png",
           "swatch": "#f5f5f0"
         },
         {
@@ -187,6 +190,7 @@
           "price": 69.98,
           "compareAtPrice": 89.98,
           "quantity": 4,
+          "image": "/images/products/floodlight-camera/black.png",
           "swatch": "#2b2b2b"
         }
       ]
@@ -228,6 +232,7 @@
           },
           "price": 89.98,
           "quantity": 7,
+          "image": "/images/products/battery-powered-camera/white.png",
           "swatch": "#f5f5f0"
         },
         {
@@ -239,6 +244,7 @@
           },
           "price": 89.98,
           "quantity": 3,
+          "image": "/images/products/battery-powered-camera/black.png",
           "swatch": "#2b2b2b"
         }
       ]
@@ -247,7 +253,7 @@
       "id": "prod-motion-sensor",
       "slug": "motion-sensor",
       "categoryId": "cat-sensor",
-      "name": "Motion Sensor",
+      "name": "Wyze Sense Motion Sensor",
       "description": "Detects movement up to 30ft with pet immunity.",
       "image": "/images/products/motion-sensor/default.png",
       "learnMore": {
@@ -266,7 +272,7 @@
       "id": "prod-door-sensor",
       "slug": "door-window-sensor",
       "categoryId": "cat-sensor",
-      "name": "Door & Window Sensor",
+      "name": "Wyze Sense Hub (Required)",
       "description": "Slim contact sensor for doors and windows.",
       "image": "/images/products/door-window-sensor/default.png",
       "hasVariants": true,

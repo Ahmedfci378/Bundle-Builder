@@ -1,8 +1,8 @@
 export interface VariantOption {
   id: string;
   label: string;
-  /** CSS color value rendered as a circular swatch, e.g. "#f5f5f0". */
   swatch?: string;
+  image?: string;   // 👈 ضيف السطر ده
   disabled?: boolean;
 }
 
@@ -64,11 +64,18 @@ export function VariantSelector({
               className={`variant-pill ${isSelected ? 'variant-pill--selected' : ''}`.trim()}
               title={option.disabled ? `${option.label} — out of stock` : option.label}
             >
+              {option.image ? (
+              <img
+                src={option.image}
+                alt={option.label}
+                className="variant-pill__image"
+              />
+            ) : (
               <span
                 className="variant-pill__dot"
                 style={{ backgroundColor: option.swatch ?? '#e5e7eb' }}
-                aria-hidden="true"
               />
+            )}
               <span className="variant-pill__label">{option.label}</span>
             </button>
           );
