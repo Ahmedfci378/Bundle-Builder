@@ -20,10 +20,10 @@ export interface PriceProps {
 }
 
 const SIZE_CLASS: Record<PriceSize, string> = {
-  sm: 'fs-6',
-  md: 'fs-5',
-  lg: 'fs-4',
-  xl: 'fs-2',
+  sm: '',
+  md: '',
+  lg: '',
+  xl: '',
 };
 
 /**
@@ -51,13 +51,20 @@ export function Price({
   return (
     <div
       className={`d-flex flex-column ${align === 'end' ? 'align-items-end' : 'align-items-start'} ${className}`}
-    >
+    style={{
+    width: "35px",     // أو 50px حسب اللي يعجبك
+    flexShrink: 0,
+  }}
+   >
       {hasMarkdown && (
-        <span className="text-decoration-line-through text-body-secondary small">
+        <span className="text-decoration-line-through text-body-secondary small"  style={{ fontSize: '13px' }}>
           {formatCurrency(compareAtPrice as number, currency, locale)}
         </span>
       )}
-      <span className={`fw-semibold ${SIZE_CLASS[size]} ${hasMarkdown && emphasizeDiscount ? 'text-primary' : ''}`}>
+      <span className={`fw-semibold ${SIZE_CLASS[size]} ${hasMarkdown && emphasizeDiscount ? 'text-primary' : ''}`}
+      style={{
+    fontSize: '15px'
+  }}>
         {freeLabel ?? formatCurrency(amount, currency, locale)}
         {suffix && <span className="fs-6 fw-normal text-body-secondary">{suffix}</span>}
       </span>

@@ -35,7 +35,7 @@ export function BundleBuilderPage() {
       <h1 className="h3 fw-bold mb-3 mb-md-4"></h1>
 
       <div className="row g-4">
-        <div className="col-12 col-lg-7">
+        <div className="col-12 col-lg-8">
           <Accordion ariaLabel="Build your security system">
             {isLoading
               ? Array.from({ length: 4 }).map((_, i) => (
@@ -55,7 +55,7 @@ export function BundleBuilderPage() {
           </Accordion>
         </div>
 
-        <div className="col-12 col-lg-5">
+        <div className="col-12 col-lg-4">
           {!isLoading && <ReviewPanelContainer layout={isSidebarLayout ? 'sidebar' : 'stacked'} />}
         </div>
       </div>

@@ -52,7 +52,7 @@ export function ReviewItem({
           <Icon name={icon ?? ICON.CART_CHECK} />
         </span>
       )}
-      <div className="flex-grow-1 min-w-0">
+      <div className="flex-grow-1 min-w-0" style={{ maxWidth: '120px' }}>
         <div className="small fw-medium text-truncate">{name}</div>
         {variantLabel && <div className="text-body-secondary" style={{ fontSize: '0.75rem' }}>{variantLabel}</div>}
       </div>
@@ -71,7 +71,7 @@ export function ReviewItem({
 
       <Price amount={price * quantity} compareAtPrice={compareAtPrice ? compareAtPrice * quantity : undefined} freeLabel={freeLabel} size="sm" />
 
-      {editable && onRemove && (
+      {/* {editable && onRemove && (
         <button
           type="button"
           className="btn btn-sm btn-link text-danger p-0"
@@ -80,7 +80,7 @@ export function ReviewItem({
         >
           <Icon name={ICON.TRASH} />
         </button>
-      )}
+      )} */}
     </div>
   );
 }

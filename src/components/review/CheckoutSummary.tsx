@@ -37,6 +37,15 @@ export function CheckoutSummary({
     <div className="d-flex flex-column gap-3 pt-3 border-top">
       <div className="d-flex align-items-start justify-content-between gap-3">
         {seal}
+        <img
+    src="/images/products/certificate/summary-icon.png"
+    alt="Summary"
+    style={{
+      width: '70px',
+      height: '70px',
+      objectFit: 'contain'
+    }}
+  />
         <div className="ms-auto text-end">
           {financingText && <div className="small text-body-secondary mb-1">{financingText}</div>}
           <Price amount={total} compareAtPrice={hasSavings ? listTotal : undefined} size="xl" />

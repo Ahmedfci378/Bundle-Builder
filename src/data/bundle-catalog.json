@@ -208,7 +208,7 @@
       "hasVariants": false,
       "sku": "CAM-DRB-001",
       "price": 69.98,
-      "quantity": 10
+      "quantity": 0
     },
     {
       "id": "prod-battery-cam",
@@ -306,7 +306,7 @@
       "id": "prod-wall-mount",
       "slug": "wall-mount-kit",
       "categoryId": "cat-accessory",
-      "name": "Wall Mount Kit",
+      "name": "Wyze MicroSD Card (256GB)",
       "description": "Universal mounting bracket for indoor and outdoor cameras.",
       "image": "/images/products/wall-mount-kit/default.png",
       "hasVariants": false,
@@ -321,7 +321,7 @@
       "categoryId": "cat-accessory",
       "name": "Solar Panel Charger",
       "description": "Keeps outdoor cameras powered without battery swaps.",
-      "image": "/images/products/solar-panel-charger/default.png",
+      "image": "/images/products/solar-panel-charger/default.jpg",
       "hasVariants": false,
       "sku": "ACC-SOL-001",
       "price": 39.99,
@@ -331,9 +331,9 @@
       "id": "prod-plan-basic",
       "slug": "basic-monitoring",
       "categoryId": "cat-plan",
-      "name": "Basic Monitoring",
+      "name": "Cam Unlimited",
       "description": "Mobile alerts and 7-day cloud storage.",
-      "image": "/images/products/plan-basic/default.png",
+      "image": "/images/products/plan-basic/default.jpg",
       "hasVariants": false,
       "sku": "PLAN-BASIC",
       "price": 9.99
@@ -344,7 +344,7 @@
       "categoryId": "cat-plan",
       "name": "Professional Monitoring",
       "description": "24/7 monitored response, 30-day cloud storage, and phone support.",
-      "image": "/images/products/plan-pro/default.png",
+      "image": "/images/products/plan-pro/default.jpg",
       "badge": {
         "label": "Recommended",
         "tone": "success"

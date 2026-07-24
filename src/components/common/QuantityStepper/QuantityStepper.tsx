@@ -37,6 +37,10 @@ export function QuantityStepper({
       className="qty-stepper d-inline-flex align-items-center border rounded"
       role="group"
       aria-label={label}
+       style={{
+    transform: 'scale(0.9)',
+    transformOrigin: 'center',
+  }}
     >
       <button
         type="button"
@@ -50,7 +54,8 @@ export function QuantityStepper({
 
       <span
         className="px-2 text-center fw-medium"
-        style={{ minWidth: '2ch' }}
+        style={{  minWidth: '1.5ch',
+    fontSize: '10px',}}
         aria-live="polite"
       >
         {value}
