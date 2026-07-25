@@ -18,40 +18,40 @@
       "required": true,
       "minSelectedQuantity": 1,
       "description": "",
-      "icon": "bi-camera-video"
+      "icon": "camera-video"
     },
     {
       "id": "cat-sensor",
       "slug": "sensors",
-      "name": "Sensors",
+      "name": "Choose your sensors",
       "order": 2,
       "selectionMode": "multi",
       "required": true,
       "minSelectedQuantity": 1,
       "description": "Add door, window, or motion sensors.",
-      "icon": "bi-broadcast"
+      "icon": "broadcast"
     },
     {
       "id": "cat-accessory",
       "slug": "accessories",
-      "name": "Accessories",
+      "name": "Add extra protection",
       "order": 3,
       "selectionMode": "multi",
       "required": false,
       "minSelectedQuantity": 0,
       "description": "Optional add-ons for your system.",
-      "icon": "bi-tools"
+      "icon": "tools"
     },
     {
       "id": "cat-plan",
       "slug": "plans",
-      "name": "Monitoring Plan",
+      "name": "Choose your plan",
       "order": 4,
       "selectionMode": "single",
       "required": true,
       "minSelectedQuantity": 1,
       "description": "Pick one monitoring plan for your system.",
-      "icon": "bi-shield-check"
+      "icon": "shield-check"
     }
   ],
   "products": [

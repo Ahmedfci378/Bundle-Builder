@@ -80,7 +80,7 @@
 }
 
 .product-card__description {
-  font-size: 0.8125rem;
+  font-size: 0.875rem;
   line-height: 1.4;
   color: #6b7280;
   display: -webkit-box;
@@ -102,8 +102,8 @@
 // Circular variant swatches — selection is shown as a ring around the
 // circle (not a fill), so the actual swatch color is never obscured.
 .variant-swatch {
-  width: 32px;
-  height: 32px;
+  width: 10px;
+  height: 10px;
   border-radius: 50%;
   border: 2px solid transparent;
   background: none;
