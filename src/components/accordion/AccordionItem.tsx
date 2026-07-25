@@ -39,7 +39,7 @@ export function AccordionItem({
   return (
     <div className="border-bottom">
       {eyebrow && (
-        <div className="small text-body-secondary text-uppercase mt-3 mb-1">{eyebrow}</div>
+        <div className="small text-body-secondary text-uppercase mt-3 mb-1 accordion-step-label">{eyebrow}</div>
       )}
 
       <h2 className="mb-0">

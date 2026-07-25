@@ -40,3 +40,9 @@
   outline: 2px solid var(--bs-primary);
   outline-offset: 2px;
 }
+
+/* الخط المنقط تحت "STEP X OF 4" — مطابق للصورة المرفقة */
+.accordion-step-label {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted #c7c7d1;
+}
