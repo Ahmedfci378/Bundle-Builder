@@ -122,7 +122,7 @@ export const ProductCard = memo(function ProductCard({
             {description}{' '}
             </p>
             {learnMoreUrl && (
-              <a href={learnMoreUrl} className="product-card__learn-more">
+              <a href={learnMoreUrl} className="product-card__learn-more" style={{ fontSize: '12px' }}>
                 {learnMoreLabel}
               </a>
             )}

@@ -74,7 +74,15 @@ export function ReviewPanel({ title, description, groups, shippingLine, summary,
           top: isStacked ? undefined : '1rem',
           
         }} >
-          
+<h5
+  className="mb-2"
+  style={{
+    fontSize: '15px',
+    fontWeight: 250,
+  }}
+>
+  Review
+</h5>          
       <h2 className="h5 fw-semibold mb-1">{title}</h2>
 
       {description && <p className="small text-body-secondary">{description}</p>}

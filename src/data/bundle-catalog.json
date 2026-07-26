@@ -409,7 +409,7 @@
   "shippingMethods": [
     {
       "id": "ship-standard",
-      "label": "Standard Shipping",
+      "label": "Fast Shipping",
       "cost": 5.99,
       "freeThreshold": 75,
       "estimatedDays": "5-7 business days"
