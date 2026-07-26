@@ -82,9 +82,11 @@ export function CategoryAccordionSection({
 
 
       {nextCategory && (
-        <Button variant="outline" className="mt-3" onClick={() => goToNext(category.id)}>
-          Next: {nextCategory.name}
-        </Button>
+         <div className="d-flex justify-content-center mt-3">
+     <Button variant="outline" onClick={() => goToNext(category.id)}>
+       Next: {nextCategory.name}
+     </Button>
+   </div>
       )}
     </AccordionItem>
   );

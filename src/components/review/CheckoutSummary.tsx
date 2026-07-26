@@ -47,14 +47,56 @@ export function CheckoutSummary({
     }}
   />
         <div className="ms-auto text-end">
-          {financingText && <div className="small text-body-secondary mb-1">{financingText}</div>}
-          <Price amount={total} compareAtPrice={hasSavings ? listTotal : undefined} size="xl" />
+<div
+  style={{
+    background: '#4E2FD2',
+    color: '#fff',
+    borderRadius: '8px',
+    padding: '6px 12px',
+    display: 'inline-block',
+    marginBottom: '8px',
+    fontSize: '14px',
+    fontWeight: 600,
+  }}
+>
+  as low as $19.19/mo
+</div>
+
+<div className="d-flex align-items-center justify-content-end gap-5">
+  {hasSavings && (
+    <span
+      className="text-decoration-line-through text-body-secondary"
+      style={{ fontSize: '13px' }}
+    >
+      ${listTotal.toFixed(2)}
+    </span>
+  )}
+
+        <div
+          style={{
+            color: '#4E2FD2',
+            transform: 'scale(1.5)',
+            transformOrigin: 'right center',
+          }}
+        >
+          <Price amount={total} size="xl" />
+        </div>  
+        </div>
         </div>
       </div>
 
       {hasSavings && (
-        <p className="text-success small fw-medium mb-0">
-          Congrats! You're saving {savingsAmount.toLocaleString(undefined, { style: 'currency', currency: 'USD' })}{' '}
+                <p
+          className="text-success fw-medium mb-0"
+          style={{
+            fontSize: '12px',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          Congrats! You're saving {savingsAmount.toLocaleString(undefined, {
+            style: 'currency',
+            currency: 'USD',
+          })}{' '}
           ({Math.round(savingsPercentage * 100)}%) on your bundle.
         </p>
       )}

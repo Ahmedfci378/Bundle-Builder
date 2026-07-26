@@ -3,6 +3,7 @@ import { QuantityStepper } from '../common/QuantityStepper/QuantityStepper';
 import { Icon } from '../common/Icon/Icon';
 import { ICON } from '../common/Icon/iconNames';
 
+
 export interface ReviewItemProps {
   image?: string;
   /** Bootstrap Icons name shown instead of an image when there's no product photo (e.g. the shipping line). */
@@ -41,20 +42,19 @@ export function ReviewItem({
   onRemove,
 }: ReviewItemProps) {
   return (
-    <div className="d-flex align-items-center gap-3 py-2">
+<div className="d-flex align-items-center gap-3 review-item">
       {image ? (
-        <img src={image} alt="" className="rounded border" style={{ width: 40, height: 40, objectFit: 'contain' }} />
-      ) : (
-        <span
-          className="rounded border d-flex align-items-center justify-content-center text-body-secondary"
-          style={{ width: 40, height: 40 }}
-        >
-          <Icon name={icon ?? ICON.CART_CHECK} />
+<img src={image} alt="" className="rounded border review-item__thumb" />      ) : (
+        <span className="rounded border d-flex align-items-center justify-content-center text-body-secondary review-item__thumb">
+          <Icon
+      name={icon ?? ICON.CART_CHECK}
+      style={{ color: '#0AA288' }}
+    />
         </span>
       )}
       <div className="flex-grow-1 min-w-0" style={{ maxWidth: '120px' }}>
-        <div className="small fw-medium text-truncate">{name}</div>
-        {variantLabel && <div className="text-body-secondary" style={{ fontSize: '0.75rem' }}>{variantLabel}</div>}
+ <div className="fw-medium text-truncate review-item__name">{name}</div>
+ {variantLabel && <div className="text-body-secondary review-item__variant">{variantLabel}</div>}
       </div>
 
       {editable && onQuantityChange ? (
@@ -69,8 +69,23 @@ export function ReviewItem({
         <span className="small text-body-secondary">Qty {quantity}</span>
       )}
 
-      <Price amount={price * quantity} compareAtPrice={compareAtPrice ? compareAtPrice * quantity : undefined} freeLabel={freeLabel} size="sm" />
-
+{freeLabel ? (
+  <div className="ms-auto">
+    <Price
+      amount={price * quantity}
+      compareAtPrice={compareAtPrice ? compareAtPrice * quantity : undefined}
+      freeLabel={freeLabel}
+      size="md"
+    />
+  </div>
+) : (
+  <Price
+    amount={price * quantity}
+    compareAtPrice={compareAtPrice ? compareAtPrice * quantity : undefined}
+    freeLabel={freeLabel}
+    size="sm"
+  />
+)}
       {/* {editable && onRemove && (
         <button
           type="button"

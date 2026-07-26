@@ -3,6 +3,7 @@ import { ReviewItem } from './ReviewItem';
 import type { ReviewItemProps } from './ReviewItem';
 import { CheckoutSummary } from './CheckoutSummary';
 import type { CheckoutSummaryProps } from './CheckoutSummary';
+import './ReviewPanel.scss';
 
 export interface ReviewGroup {
   categoryId: string;
@@ -49,7 +50,7 @@ export function ReviewPanel({ title, description, groups, shippingLine, summary,
       {groups
         .filter(group => group.items.length > 0)
         .map(group => (
-          <div key={group.categoryId} className="mb-2">
+          <div key={group.categoryId} className="mb-2 review-category-group">
             <div className="small text-uppercase text-body-secondary mt-2">{group.categoryName}</div>
             {group.items.map(item => (
               <ReviewItem key={item.productId} {...item} />
