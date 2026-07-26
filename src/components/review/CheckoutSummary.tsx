@@ -106,7 +106,8 @@ export function CheckoutSummary({
       </Button>
 
       {onSaveForLater && (
-        <button type="button" className="btn btn-link text-center small text-decoration-underline" onClick={onSaveForLater}>
+        <button type="button" className="btn btn-link text-center small text-decoration-underline" onClick={onSaveForLater}
+        style={{ color: '#484848'}}>
           Save my system for later
         </button>
       )}
