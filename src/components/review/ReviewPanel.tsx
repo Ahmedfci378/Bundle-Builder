@@ -69,11 +69,14 @@ export function ReviewPanel({ title, description, groups, shippingLine, summary,
   return (
     <div
       className={` rounded-4 p-4 ${isStacked ? '' : 'sticky-top'}`}
-style={{
-    background: '#EDF4FF',
-    top: isStacked ? undefined : '1rem',
-  }}    >
+      style={{
+          background: '#EDF4FF',
+          top: isStacked ? undefined : '1rem',
+          
+        }} >
+          
       <h2 className="h5 fw-semibold mb-1">{title}</h2>
+
       {description && <p className="small text-body-secondary">{description}</p>}
 
       {!hasItems && emptyState}

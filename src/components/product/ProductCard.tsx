@@ -118,8 +118,9 @@ export const ProductCard = memo(function ProductCard({
         <div className="card-body product-card__body product-card__body--camera d-flex flex-column gap-1">
           <h3 className="product-card__title mb-0">{name}</h3>
 
-          <p className="product-card__description product-card__description--camera mb-0"> </p>
+          <p className="product-card__description product-card__description--camera mb-0"> 
             {description}{' '}
+            </p>
             {learnMoreUrl && (
               <a href={learnMoreUrl} className="product-card__learn-more">
                 {learnMoreLabel}
