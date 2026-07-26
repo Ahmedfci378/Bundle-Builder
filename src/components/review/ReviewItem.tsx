@@ -66,7 +66,8 @@ export function ReviewItem({
           size="sm"
         />
       ) : (
-        <span className="small text-body-secondary">Qty {quantity}</span>
+        <span className="small text-body-secondary"></span>
+        
       )}
 
 {freeLabel ? (
