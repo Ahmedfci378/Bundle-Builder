@@ -16,6 +16,7 @@ import { ReviewPanelContainer } from '../review/ReviewPanelContainer';
 export function BundleBuilderPage() {
   const catalog = useCatalog();
   const isSidebarLayout = useMediaQuery(`(min-width: ${BREAKPOINTS.lg}px)`);
+  const isDesktopXL = useMediaQuery('(min-width: 1400px)');
 
   if (catalog.status === 'error') {
     return (
@@ -34,31 +35,72 @@ export function BundleBuilderPage() {
     <div className="container py-3 py-md-4">
       <h1 className="h3 fw-bold mb-3 mb-md-4"></h1>
 
-      <div className="row g-4">
-        <div className="col-12 col-lg-8">
-          <Accordion ariaLabel="Build your security system">
-            {isLoading
-              ? Array.from({ length: 4 }).map((_, i) => (
-                  <div key={i} className="border-bottom py-3 placeholder-glow">
-                    <span className="placeholder col-4" />
-                  </div>
-                ))
-              : categories.map((category, index) => (
-                  <CategoryAccordionSection
-                    key={category.id}
-                    category={category}
-                    products={catalog.data!.products.filter(p => p.categoryId === category.id)}
-                    stepNumber={index + 1}
-                    totalSteps={categories.length}
-                  />
-                ))}
-          </Accordion>
-        </div>
-
-        <div className="col-12 col-lg-4">
-          {!isLoading && <ReviewPanelContainer layout={isSidebarLayout ? 'sidebar' : 'stacked'} />}
-        </div>
+      {isDesktopXL ? (
+  <>
+    <div className="row">
+      <div className="col-12">
+        <Accordion ariaLabel="Build your security system">
+          {isLoading
+            ? Array.from({ length: 4 }).map((_, i) => (
+                <div key={i} className="border-bottom py-3 placeholder-glow">
+                  <span className="placeholder col-4" />
+                </div>
+              ))
+            : categories.map((category, index) => (
+                <CategoryAccordionSection
+                  key={category.id}
+                  category={category}
+                  products={catalog.data!.products.filter(
+                    p => p.categoryId === category.id
+                  )}
+                  stepNumber={index + 1}
+                  totalSteps={categories.length}
+                />
+              ))}
+        </Accordion>
       </div>
+    </div>
+
+    <div className="row mt-4">
+      <div className="col-12">
+        {!isLoading && (
+          <ReviewPanelContainer layout="stacked" />
+        )}
+      </div>
+    </div>
+  </>
+) : (
+  <div className="row g-4">
+    <div className="col-12 col-lg-8">
+      <Accordion ariaLabel="Build your security system">
+        {isLoading
+          ? Array.from({ length: 4 }).map((_, i) => (
+              <div key={i} className="border-bottom py-3 placeholder-glow">
+                <span className="placeholder col-4" />
+              </div>
+            ))
+          : categories.map((category, index) => (
+              <CategoryAccordionSection
+                key={category.id}
+                category={category}
+                products={catalog.data!.products.filter(
+                  p => p.categoryId === category.id
+                )}
+                stepNumber={index + 1}
+                totalSteps={categories.length}
+              />
+            ))}
+      </Accordion>
+    </div>
+
+    <div className="col-12 col-lg-4">
+      {!isLoading && (
+        <ReviewPanelContainer layout="sidebar" />
+      )}
+    </div>
+  </div>
+)}
+
     </div>
   );
 }

@@ -380,3 +380,58 @@ font-size: 12px;
 .variant-pill__label {
   white-space: nowrap;
 }
+
+@media (min-width: 1400px) {
+
+  .product-card--camera {
+    flex-direction: column !important;
+    min-height: auto;
+  }
+
+  .product-card--camera .product-card__media {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .product-card__image-wrap--camera {
+    height: 140px;
+    padding: 14px;
+  }
+
+  .product-card--camera .product-card__image {
+    width: 80px;
+    height: 80px;
+  }
+
+  .product-card__body--camera {
+    max-width: 100%;
+    padding: 14px;
+  }
+
+  .product-card--camera .product-card__title {
+    font-size: 15px;
+    margin-bottom: 4px;
+  }
+
+  .product-card__description--camera {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .variant-pill {
+    height: 24px;
+    padding: 3px 8px;
+    font-size: 11px;
+  }
+
+  .product-card--camera .qty-stepper-btn {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+  }
+
+  .product-card__footer--camera {
+    align-items: center;
+  }
+}

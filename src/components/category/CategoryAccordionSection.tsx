@@ -50,7 +50,14 @@ export function CategoryAccordionSection({
     >
       {category.description && <p className="text-body-secondary small mb-3">{category.description}</p>}
 
-      <div className={`row ${isCameraSection ? 'g-3 g-lg-4' : 'g-3'}`}>
+<div
+  className={`row ${
+    isCameraSection
+      ? 'g-3 g-lg-4 row-cols-1 row-cols-md-2 row-cols-xxl-5'
+      : 'g-3'
+  }`}
+>
+
         {isLoading
           ? Array.from({ length: 3 }).map((_, i) => (
               <div className={isCameraSection ? cameraColumnClass : defaultColumnClass} key={i}>
