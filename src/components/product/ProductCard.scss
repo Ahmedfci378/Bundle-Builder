@@ -156,7 +156,7 @@
 
 .product-card--camera {
   display: flex !important;
-  flex-direction: row !important;
+  flex-direction: row;
   align-items: stretch;
 
   width: 100%;
@@ -298,6 +298,27 @@ font-size: 12px;
   .product-card__body--camera {
     max-width: 100%;
     padding: 1rem 1.25rem 1.25rem;
+  }
+}
+@media (min-width: 992px) {
+  .product-card--camera {
+    flex-direction: row !important;
+  }
+
+  .product-card--camera .product-card__media {
+    flex: 0 0 34%;
+    max-width: 34%;
+    width: auto;
+  }
+
+  .product-card__image-wrap--camera {
+    height: 100%;
+    padding: 18px;
+  }
+
+  .product-card__body--camera {
+    max-width: 66%;
+    padding: 18px 18px 18px 0;
   }
 }
 
