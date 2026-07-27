@@ -51,7 +51,10 @@ export function ReviewPanel({ title, description, groups, shippingLine, summary,
         .filter(group => group.items.length > 0)
         .map(group => (
           <div key={group.categoryId} className="mb-2 review-category-group">
-            <div className="small text-uppercase text-body-secondary mt-2">{group.categoryName}</div>
+
+            <div className="small text-uppercase text-body-secondary mt-2">
+              {group.categoryName.replace('Choose your ', '')}
+            </div>            
             {group.items.map(item => (
               <ReviewItem key={item.productId} {...item} />
             ))}
@@ -74,15 +77,15 @@ export function ReviewPanel({ title, description, groups, shippingLine, summary,
           top: isStacked ? undefined : '1rem',
           
         }} >
-<h5
-  className="mb-2"
-  style={{
-    fontSize: '15px',
-    fontWeight: 250,
-  }}
->
-  Review
-</h5>          
+        <h5
+          className="mb-2"
+          style={{
+            fontSize: '15px',
+            fontWeight: 250,
+          }}
+        >
+          Review
+        </h5>          
       <h2 className="h5 fw-semibold mb-1">{title}</h2>
 
       {description && <p className="small text-body-secondary">{description}</p>}

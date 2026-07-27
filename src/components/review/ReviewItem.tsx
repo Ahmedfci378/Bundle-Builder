@@ -87,16 +87,7 @@ export function ReviewItem({
     size="sm"
   />
 )}
-      {/* {editable && onRemove && (
-        <button
-          type="button"
-          className="btn btn-sm btn-link text-danger p-0"
-          onClick={onRemove}
-          aria-label={`Remove ${name}`}
-        >
-          <Icon name={ICON.TRASH} />
-        </button>
-      )} */}
+      
     </div>
   );
 }
