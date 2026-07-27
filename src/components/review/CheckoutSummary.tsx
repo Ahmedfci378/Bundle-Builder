@@ -25,7 +25,6 @@ export function CheckoutSummary({
   total,
   savingsAmount,
   savingsPercentage,
-  financingText,
   onCheckout,
   onSaveForLater,
   isCheckoutDisabled = false,

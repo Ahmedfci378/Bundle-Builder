@@ -1,6 +1,5 @@
 import { useCatalog } from '../../context/catalog/useCatalog';
 import { useMediaQuery } from '../../hooks/useMediaQuery';
-import { BREAKPOINTS } from '../../utils/breakpoints';
 import { Accordion } from '../accordion/Accordion';
 import { CategoryAccordionSection } from '../category/CategoryAccordionSection';
 import { ReviewPanelContainer } from '../review/ReviewPanelContainer';
@@ -15,7 +14,6 @@ import { ReviewPanelContainer } from '../review/ReviewPanelContainer';
  */
 export function BundleBuilderPage() {
   const catalog = useCatalog();
-  const isSidebarLayout = useMediaQuery(`(min-width: ${BREAKPOINTS.lg}px)`);
   const isDesktopXL = useMediaQuery('(min-width: 1400px)');
 
   if (catalog.status === 'error') {

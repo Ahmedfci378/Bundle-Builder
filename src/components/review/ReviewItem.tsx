@@ -39,7 +39,7 @@ export function ReviewItem({
   maxQuantity = 10,
   editable = true,
   onQuantityChange,
-  onRemove,
+
 }: ReviewItemProps) {
   return (
 <div className="d-flex align-items-center gap-3 review-item">

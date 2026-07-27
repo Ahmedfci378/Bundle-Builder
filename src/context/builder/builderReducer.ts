@@ -39,6 +39,7 @@ export function builderReducer(state: BuilderState, action: BuilderAction): Buil
           }
         : {
             productId,
+            variantId: '',
             quantity,
           },
     },
