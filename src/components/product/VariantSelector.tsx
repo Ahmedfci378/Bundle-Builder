@@ -45,7 +45,7 @@ export function VariantSelector({
 }: VariantSelectorProps) {
   return (
     <div
-      className={`d-flex flex-wrap gap-2 ${className}`.trim()}
+      className={`d-flex flex-nowrap gap-2 ${className}`.trim()}
       role="radiogroup"
       aria-label={`${name} options`}
     >
