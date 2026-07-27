@@ -49,10 +49,14 @@ export function ReviewPanel({ title, description, groups, shippingLine, summary,
     <div className="d-flex flex-column">
       {groups
         .filter(group => group.items.length > 0)
-        .map(group => (
+        .map((group, index) => (
           <div key={group.categoryId} className="mb-2 review-category-group">
 
-            <div className="small text-uppercase text-body-secondary mt-2">
+            <div className="small text-uppercase text-body-secondary mt-2"
+            style={{
+        borderTop: index === 0 ? '1px solid #D9D9D9' : 'none',
+        paddingTop: index === 0 ? '0.5rem' : '0',
+      }}>
               {group.categoryName.replace('Choose your ', '')}
             </div>            
             {group.items.map(item => (
