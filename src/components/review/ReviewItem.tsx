@@ -53,7 +53,18 @@ export function ReviewItem({
         </span>
       )}
       <div className="flex-grow-1 min-w-0" style={{ maxWidth: '120px' }}>
- <div className="fw-medium text-truncate review-item__name">{name}</div>
+ 
+ <div className="fw-medium text-truncate review-item__name">
+  {name === 'Cam Unlimited' ? (
+    <>
+      <span style={{ color: '#000000' }}>Cam</span>{' '}
+      <span style={{ color: '#4E2FD2' }}>Unlimited</span>
+    </>
+  ) : (
+    name
+  )}
+</div>
+
  {variantLabel && <div className="text-body-secondary review-item__variant">{variantLabel}</div>}
       </div>
 
