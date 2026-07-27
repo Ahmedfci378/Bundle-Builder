@@ -321,6 +321,9 @@ font-size: 12px;
     padding: 18px 18px 18px 0;
   }
 }
+.product-card--camera .text-decoration-line-through {
+  color: #dc3545 !important;
+}
 
 // Labeled variant pills (swatch dot + name) — Cameras section only.
 .variant-pill {
